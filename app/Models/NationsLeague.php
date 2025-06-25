@@ -2,10 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use TCG\Voyager\Traits\Translatable;
 
 class NationsLeague extends Model
 {
-    use HasFactory;
+    use Translatable;
+
+    protected $translatable = ['titre', 'contenu'];
+
+    protected $fillable = [
+        'titre',
+        'contenu',
+        'image',
+        'categorie'
+    ];
 }
