@@ -44,8 +44,8 @@
         </div>
       </section>
       <div class="flex justify-between mt-8">
-        <a href="{{ route('palmares') }}" class="text-black-600 hover:underline">← Page précédente</a>
-        <a href="{{ route('videos') }}" class="text-bkack-600 hover:underline">Page suivante →</a>
+        <a href="{{ route('palmares') }}" class="text-black-600 hover:underline">← Palmarès</a>
+        <a href="{{ route('videos') }}" class="text-bkack-600 hover:underline">Vidéos →</a>
     </div>
     </main>
 

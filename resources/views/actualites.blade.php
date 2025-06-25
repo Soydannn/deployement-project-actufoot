@@ -147,7 +147,7 @@
   </section>
   <div class="flex justify-between mt-8">
     <span></span> 
-    <a href="{{ route('transferts') }}" class="text-black-600 hover:underline">Page suivante →</a>
+    <a href="{{ route('transferts') }}" class="text-black-600 hover:underline">Transfert →</a>
 </div>
 </main>
                       <!-- Footer -->

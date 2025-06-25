@@ -40,7 +40,7 @@
             <p><span class="font-semibold">Date:</span> {{ $champions->date }}</p>
         </div>
         <div class="mt-8">
-            <a href="{{ route('actualites') }}" class="text-black-600 hover:underline text-sm">← Retour aux actualités</a>
+            <a href="{{ route('actualites') }}" class="text-black-600 hover:underline text-sm">← Retour à l'accueil</a>
         </div>
         <div class="mt-8">
             <a href="{{ route('champions') }}" class="text-black-600 hover:underline text-sm">← Retour aux actualités de la League des Champions</a>

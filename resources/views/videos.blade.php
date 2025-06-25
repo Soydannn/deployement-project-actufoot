@@ -46,7 +46,7 @@
             </div>
         </section>
         <div class="flex justify-between mt-8">
-            <a href="{{ route('nations') }}" class="text-black-600 hover:underline">← Page précédente</a>
+            <a href="{{ route('nations') }}" class="text-black-600 hover:underline">← Ligues des Nations</a>
         </div>
     </main>
 

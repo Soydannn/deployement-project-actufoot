@@ -46,8 +46,8 @@
       </div>
 
       <div class="flex justify-between mt-8">
-        <a href="{{ route('actualites') }}" class="text-black-600 hover:underline">← Page précédente</a>
-        <a href="{{ route('champions') }}" class="text-bkack-600 hover:underline">Page suivante →</a>
+        <a href="{{ route('actualites') }}" class="text-black-600 hover:underline">← Actualités</a>
+        <a href="{{ route('champions') }}" class="text-bkack-600 hover:underline">Ligues des Champions →</a>
     </div>
     </main>
     <!-- Footer -->

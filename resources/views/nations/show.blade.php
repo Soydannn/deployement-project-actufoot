@@ -41,7 +41,7 @@
 
         </div>
         <div class="mt-8">
-            <a href="{{ route('actualites') }}" class="text-black-600 hover:underline text-sm">← Retour aux actualités</a>
+            <a href="{{ route('actualites') }}" class="text-black-600 hover:underline text-sm">← Retour à l'accueil</a>
         </div>
         <div class="mt-8">
             <a href="{{ route('nations') }}" class="text-black-600 hover:underline text-sm">← Retour aux actualités concernant la Leagues des nations</a>
