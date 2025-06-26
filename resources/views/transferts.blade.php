@@ -36,7 +36,6 @@
             @if ($transfert->image)
               <img src="{{ $transfert->image }}" alt="{{ $transfert->titre }}" class="w-full h-40 object-cover rounded mb-4" />
             @endif
-            <h2 class="text-xl font-bold mb-2">{{ $transfert->titre }}</h2>
             <p class="text-gray-700 mb-4 flex-grow">
               {{ Str::limit(strip_tags(html_entity_decode($transfert->description)), 120) }}
             </p>

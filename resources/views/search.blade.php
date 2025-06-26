@@ -29,88 +29,88 @@
     <main class="max-w-6xl mx-auto p-6">
         <h2 class="text-2xl font-bold mb-8">Résultats pour : <span class="italic">"{{ $query }}"</span></h2>
 
-        <!-- Transferts -->
-        <section class="mb-12">
-            <h3 class="text-xl font-semibold mb-4">Transferts</h3>
-            @if ($transferts->isEmpty())
-                <p class="text-gray-600 italic">Aucun résultat trouvé dans les transferts.</p>
-            @else
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    @foreach ($transferts as $transfert)
-                        <article class="bg-white border border-gray-300 rounded p-4 shadow hover:shadow-lg transition flex flex-col">
-                            @if ($transfert->image)
-                                <img src="{{ $transfert->image }}" alt="{{ $transfert->titre }}" class="w-full h-40 object-cover rounded mb-4" />
-                            @endif
-                            <h4 class="text-lg font-bold mb-2">{{ $transfert->titre }}</h4>
-                            <p class="text-gray-700 mb-4 flex-grow">{{ Str::limit(strip_tags(html_entity_decode($transfert->description)), 120) }}</p>
-                            <a href="{{ route('transfert.show', ['id' => $transfert->id]) }}" class="text-green-600 hover:underline px-4 py-2 rounded">En savoir plus</a>
-                        </article>
-                    @endforeach
-                </div>
-            @endif
-        </section>
+       <!-- Transferts -->
+<section class="mb-12 max-w-6xl mx-auto px-4 py-8 bg-white rounded shadow">
+    <h3 class="text-xl font-semibold mb-6">Transferts</h3>
+    @if ($transferts->isEmpty())
+        <p class="text-gray-600 italic">Aucun résultat trouvé dans les transferts.</p>
+    @else
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            @foreach ($transferts as $transfert)
+                <article class="border border-gray-200 rounded p-4 shadow hover:shadow-lg transition flex flex-col">
+                    @if ($transfert->image)
+                        <img src="{{ $transfert->image }}" alt="{{ $transfert->titre }}" class="w-full h-40 object-cover rounded mb-4" />
+                    @endif
+                    <h4 class="text-lg font-bold mb-2">{{ $transfert->titre }}</h4>
+                    <p class="text-gray-700 mb-4 flex-grow">{{ Str::limit(strip_tags(html_entity_decode($transfert->description)), 120) }}</p>
+                    <a href="{{ route('transfert.show', ['id' => $transfert->id]) }}" class="text-green-600 hover:underline px-4 py-2 rounded">En savoir plus</a>
+                </article>
+            @endforeach
+        </div>
+    @endif
+</section>
 
-        <!-- Ligue des Champions -->
-        <section class="mb-12">
-            <h3 class="text-xl font-semibold mb-4">Ligue des Champions</h3>
-            @if ($champions->isEmpty())
-                <p class="text-gray-600 italic">Aucun résultat trouvé dans la Ligue des Champions.</p>
-            @else
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    @foreach ($champions as $champion)
-                        <article class="bg-white border border-gray-300 rounded p-4 shadow hover:shadow-lg transition">
-                            @if ($champion->image)
-                                <img src="{{ $champion->image }}" alt="{{ $champion->titre }}" class="w-full h-40 object-cover rounded mb-4">
-                            @endif
-                            <h4 class="text-lg font-bold mb-2">{{ $champion->titre }}</h4>
-                            <p class="text-gray-700 mb-4">{{ Str::limit(strip_tags(html_entity_decode($champion->contenu)), 100) }}</p>
-                            <a href="{{ route('champions.show', ['id' => $champion->id]) }}" class="text-green-600 hover:underline px-4 py-2 rounded">En savoir plus</a>
-                        </article>
-                    @endforeach
-                </div>
-            @endif
-        </section>
+<!-- Ligue des Champions -->
+<section class="mb-12 max-w-6xl mx-auto px-4 py-8 bg-white rounded shadow">
+    <h3 class="text-xl font-semibold mb-6">Ligue des Champions</h3>
+    @if ($champions->isEmpty())
+        <p class="text-gray-600 italic">Aucun résultat trouvé dans la Ligue des Champions.</p>
+    @else
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            @foreach ($champions as $champion)
+                <article class="border border-gray-200 rounded p-4 shadow hover:shadow-lg transition">
+                    @if ($champion->image)
+                        <img src="{{ $champion->image }}" alt="{{ $champion->titre }}" class="w-full h-40 object-cover rounded mb-4">
+                    @endif
+                    <h4 class="text-lg font-bold mb-2">{{ $champion->titre }}</h4>
+                    <p class="text-gray-700 mb-4">{{ Str::limit(strip_tags(html_entity_decode($champion->contenu)), 100) }}</p>
+                    <a href="{{ route('champions.show', ['id' => $champion->id]) }}" class="text-green-600 hover:underline px-4 py-2 rounded">En savoir plus</a>
+                </article>
+            @endforeach
+        </div>
+    @endif
+</section>
 
-        <!-- Ligue des Nations -->
-        <section class="mb-12">
-            <h3 class="text-xl font-semibold mb-4">Ligue des Nations</h3>
-            @if ($nations->isEmpty())
-                <p class="text-gray-600 italic">Aucun résultat trouvé dans la Ligue des Nations.</p>
-            @else
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    @foreach ($nations as $nation)
-                        <article class="bg-white border border-gray-300 rounded p-4 shadow hover:shadow-lg transition">
-                            @if ($nation->image)
-                                <img src="{{ $nation->image }}" alt="{{ $nation->titre }}" class="w-full h-40 object-cover rounded mb-4">
-                            @endif
-                            <h4 class="text-lg font-bold mb-2">{{ $nation->titre }}</h4>
-                            <p class="text-gray-700 mb-4">{{ Str::limit(strip_tags(html_entity_decode($nation->contenu)), 100) }}</p>
-                            <a href="{{ route('nations.show', ['id' => $nation->id]) }}" class="text-green-600 hover:underline px-4 py-2 rounded">En savoir plus</a>
-                        </article>
-                    @endforeach
-                </div>
-            @endif
-        </section>
+<!-- Ligue des Nations -->
+<section class="mb-12 max-w-6xl mx-auto px-4 py-8 bg-white rounded shadow">
+    <h3 class="text-xl font-semibold mb-6">Ligue des Nations</h3>
+    @if ($nations->isEmpty())
+        <p class="text-gray-600 italic">Aucun résultat trouvé dans la Ligue des Nations.</p>
+    @else
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            @foreach ($nations as $nation)
+                <article class="border border-gray-200 rounded p-4 shadow hover:shadow-lg transition">
+                    @if ($nation->image)
+                        <img src="{{ $nation->image }}" alt="{{ $nation->titre }}" class="w-full h-40 object-cover rounded mb-4">
+                    @endif
+                    <h4 class="text-lg font-bold mb-2">{{ $nation->titre }}</h4>
+                    <p class="text-gray-700 mb-4">{{ Str::limit(strip_tags(html_entity_decode($nation->contenu)), 100) }}</p>
+                    <a href="{{ route('nations.show', ['id' => $nation->id]) }}" class="text-green-600 hover:underline px-4 py-2 rounded">En savoir plus</a>
+                </article>
+            @endforeach
+        </div>
+    @endif
+</section>
 
-        <!-- Palmarès -->
-        <section class="mb-12">
-            <h3 class="text-xl font-semibold mb-4">Palmarès</h3>
-            @if ($palmares->isEmpty())
-                <p class="text-gray-600 italic">Aucun résultat trouvé dans les palmarès.</p>
-            @else
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    @foreach ($palmares as $info)
-                        <article class="bg-white border border-gray-300 rounded p-4 shadow hover:shadow-lg transition">
-                            @if ($info->image)
-                                <img src="{{ $info->image }}" alt="{{ $info->titre }}" class="w-full h-40 object-cover rounded mb-4">
-                            @endif
-                            <p class="text-gray-700 mb-4">{{ Str::limit(strip_tags(html_entity_decode($info->description)), 100) }}</p>
-                            <a href="{{ route('palmares.show', ['id' => $info->id]) }}" class="text-green-600 hover:underline px-4 py-2 rounded">En savoir plus</a>
-                        </article>
-                    @endforeach
-                </div>
-            @endif
-        </section>
+<!-- Palmarès -->
+<section class="mb-12 max-w-6xl mx-auto px-4 py-8 bg-white rounded shadow">
+    <h3 class="text-xl font-semibold mb-6">Palmarès</h3>
+    @if ($palmares->isEmpty())
+        <p class="text-gray-600 italic">Aucun résultat trouvé dans les palmarès.</p>
+    @else
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            @foreach ($palmares as $info)
+                <article class="border border-gray-200 rounded p-4 shadow hover:shadow-lg transition">
+                    @if ($info->image)
+                        <img src="{{ $info->image }}" alt="{{ $info->titre }}" class="w-full h-40 object-cover rounded mb-4">
+                    @endif
+                    <p class="text-gray-700 mb-4">{{ Str::limit(strip_tags(html_entity_decode($info->description)), 100) }}</p>
+                    <a href="{{ route('palmares.show', ['id' => $info->id]) }}" class="text-green-600 hover:underline px-4 py-2 rounded">En savoir plus</a>
+                </article>
+            @endforeach
+        </div>
+    @endif
+</section>
 
         <!-- Vidéos -->        
        <section class="mb-12 max-w-6xl mx-auto px-4 py-8 bg-white rounded shadow mt-8">

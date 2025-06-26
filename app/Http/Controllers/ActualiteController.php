@@ -18,15 +18,12 @@ class ActualiteController extends Controller
 
         // Récupère la dernière actualité
 
-        $lastActualite = Actualite::orderBy('created_at', 'desc')->first();
         $lastTransfert = Transfert::orderBy('created_at', 'desc')->first();
         $lastPalmares = Palmarès::orderBy('created_at', 'desc')->first();
         $lastNation = NationsLeague::orderBy('created_at', 'desc')->first();
         $lastChampion = ChampionsLeague::orderBy('created_at', 'desc')->first();
-        $lastActu = Actualite::latest()->first();
 
         $lastItems = collect([
-            $lastActualite, 
             $lastTransfert, 
             $lastPalmares, 
             $lastNation, 
@@ -38,9 +35,6 @@ class ActualiteController extends Controller
 
 
 
-        
-        // Récupère les 3 dernières actualités après la première
-        $recentActus = Actualite::latest()->skip(1)->take(3)->get();
     
         // Récupère les 3 derniers transferts
         $transferts = Transfert::latest()->take(3)->get();
@@ -56,7 +50,7 @@ class ActualiteController extends Controller
 
         $videos = Videos::latest()->take(3)->get();
     
-        return view('actualites', compact('lastActu', 'recentActus', 'transferts', 'champions', 'palmares', 'nations', 'videos', 'lastArticle'));
+        return view('actualites', compact('transferts', 'champions', 'palmares', 'nations', 'videos', 'lastArticle'));
     }
 
     public function show($id)

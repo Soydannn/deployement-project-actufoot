@@ -17,24 +17,29 @@ class SearchController extends Controller
         // Recherche dans Transferts (joueur = titre, description = contenu)
         $transferts = Transfert::where('joueur', 'like', "%$query%")
             ->orWhere('description', 'like', "%$query%")
+            ->orderBy('created_at', 'desc')
             ->get();
 
         // Recherche dans Champions
         $champions = ChampionsLeague::where('titre', 'like', "%$query%")
             ->orWhere('contenu', 'like', "%$query%")
+            ->orderBy('created_at', 'desc')
             ->get();
 
         // Recherche dans Nations
         $nations = NationsLeague::where('titre', 'like', "%$query%")
             ->orWhere('contenu', 'like', "%$query%")
+            ->orderBy('created_at', 'desc')
             ->get();
 
         // Recherche dans Palmares
         $palmares = Palmarès::where('equipe', 'like', "%$query%")
             ->orWhere('description', 'like', "%$query%")
+            ->orderBy('created_at', 'desc')
             ->get();
 
         $videos = Videos::where('titre', 'like', "%$query%")
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return view('search', compact('query', 'transferts', 'champions', 'nations', 'palmares', 'videos'));
