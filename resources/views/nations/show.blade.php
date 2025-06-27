@@ -36,7 +36,7 @@
 
         <div class="flex flex-col gap-4 text-lg">
             <p><span class="font-semibold">Titre :</span> {{ $nations->titre }}</p>
-            <p><span class="font-semibold">Description :</span> {!! $nations->contenu !!}</p>
+            <p><span class="font-semibold">Contenu :</span> {!! $nations->contenu !!}</p>
             <p><span class="font-semibold">Date :</span> {{ $nations->date }}</p>
 
         </div>

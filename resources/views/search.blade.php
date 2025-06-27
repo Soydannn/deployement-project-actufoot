@@ -130,7 +130,7 @@
                             allowfullscreen>
                         </iframe>
                     </div>
-                    <h3 class="text-m font-bold mb-2">{{ $video->Titre }}</h3>
+                    <h3 class="text-m font-bold mb-2">{{ $video->titre }}</h3>
                 </article>
             @endforeach
         </div>
