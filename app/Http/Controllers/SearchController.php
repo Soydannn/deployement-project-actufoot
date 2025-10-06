@@ -42,6 +42,6 @@ class SearchController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('search', compact('query', 'transferts', 'champions', 'nations', 'palmares', 'videos'));
+        return view('search.index', compact('query', 'transferts', 'champions', 'nations', 'palmares', 'videos'));
     }
 }

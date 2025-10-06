@@ -50,7 +50,7 @@ class ActualiteController extends Controller
 
         $videos = Video::latest()->take(3)->get();
     
-        return view('actualites', compact('transferts', 'champions', 'palmares', 'nations', 'videos', 'lastArticle'));
+        return view('actualites.index', compact('transferts', 'champions', 'palmares', 'nations', 'videos', 'lastArticle'));
     }
 
     public function show($id)

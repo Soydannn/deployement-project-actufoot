@@ -10,6 +10,6 @@ class VideoController extends Controller
     public function index()
 {
     $videos = Video::latest()->paginate(9);
-    return view('videos', compact('videos'));
+    return view('videos.index', compact('videos'));
 }
 }

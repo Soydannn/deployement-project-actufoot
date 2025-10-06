@@ -9,7 +9,7 @@ class PalmaresController extends Controller
     public function index()
     {
         $palmares = Palmares::latest()->paginate(9);
-        return view('palmares', compact('palmares'));
+        return view('palmares.index', compact('palmares'));
     }
 
     public function show($id)

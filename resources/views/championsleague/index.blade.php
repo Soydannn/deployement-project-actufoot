@@ -13,14 +13,14 @@
             <img src="{{ asset('images/actufoot.png') }}" alt="Logo" class="h-24 w-auto">
         </div>
         <nav class="mt-4 space-x-6">
-            <a href="{{ route('actualites') }}" class="text-black hover:text-green-600  font-sans uppercase">ACTUALITÉS</a>
-            <a href="{{ route('transferts') }}" class="text-black hover:text-green-600  font-sans uppercase">TRANSFERTS</a>
-            <a href="{{ route('champions') }}" class="text-green-600 font-sans uppercase font-bold">LIGUE DES CHAMPIONS</a>
-            <a href="{{ route('palmares') }}" class="text-black hover:text-green-600 font-sans uppercase">PALMARÈS</a>
-            <a href="{{ route('nations') }}" class="text-black hover:text-green-600  font-sans uppercase">LIGUE DES NATIONS</a>
-            <a href="{{ route('videos') }}" class="text-black hover:text-green-600  font-sans uppercase">VIDÉOS</a>
+            <a href="{{ route('actualites.index') }}" class="text-black hover:text-green-600  font-sans uppercase">ACTUALITÉS</a>
+            <a href="{{ route('transferts.index') }}" class="text-black hover:text-green-600  font-sans uppercase">TRANSFERTS</a>
+            <a href="{{ route('championsleague.index') }}" class="text-green-600 font-sans uppercase font-bold">LIGUE DES CHAMPIONS</a>
+            <a href="{{ route('palmares.index') }}" class="text-black hover:text-green-600 font-sans uppercase">PALMARÈS</a>
+            <a href="{{ route('nationsleague.index') }}" class="text-black hover:text-green-600  font-sans uppercase">LIGUE DES NATIONS</a>
+            <a href="{{ route('videos.index') }}" class="text-black hover:text-green-600  font-sans uppercase">VIDÉOS</a>
         </nav>
-        <form action="{{ route('search') }}" method="GET" class="flex items-center space-x-2 mt-4 justify-center">
+        <form action="{{ route('search.index') }}" method="GET" class="flex items-center space-x-2 mt-4 justify-center">
             <input type="text" name="query" placeholder="Rechercher..." class="p-2 border rounded w-64" required>
             <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Rechercher</button>
         </form>
@@ -38,14 +38,14 @@
                    @endif
                    <h3 class="text-xl font-bold mb-2">{{ $champion->titre }}</h3>
                    {{ Str::limit(strip_tags(html_entity_decode($champion->contenu)), 100) }}
-                   <a class="text-green-600  px-4 py-2 rounded hover:underline" href="{{ route('champions.show', ['id' => $champion->id]) }}">En savoir plus</a>                    
+                   <a class="text-green-600  px-4 py-2 rounded hover:underline" href="{{ route('championsleague.show', ['id' => $champion->id]) }}">En savoir plus</a>                    
                  </div>
                @endforeach
              </div>
            </section>
            <div class="flex justify-between mt-8">
-            <a href="{{ route('transferts') }}" class="text-black-600 hover:underline">← Transfert</a>
-            <a href="{{ route('palmares') }}" class="text-bkack-600 hover:underline">Palmarès →</a>
+            <a href="{{ route('transferts.index') }}" class="text-black-600 hover:underline">← Transferts</a>
+            <a href="{{ route('palmares.index') }}" class="text-bkack-600 hover:underline">Palmarès →</a>
         </div>
     </main>
 
@@ -62,12 +62,12 @@
         </p>
 
         <div class="flex flex-wrap justify-center gap-6 text-sm mb-6">
-          <a href="{{ route('actualites') }}" class="hover:underline">Actualités</a>
-          <a href="{{ route('transferts') }}" class="hover:underline">Transferts</a>
-          <a href="{{ route('champions') }}" class="hover:underline font-bold">Ligue des Champions</a>
-          <a href="{{ route('palmares') }}" class="hover:underline">Palmarès</a>
-          <a href="{{ route('nations') }}" class="hover:underline">Ligue des Nations</a>
-          <a href="{{ route('videos') }}" class="hover:underline">Vidéos</a>
+          <a href="{{ route('actualites.index') }}" class="hover:underline">Actualités</a>
+          <a href="{{ route('transferts.index') }}" class="hover:underline">Transferts</a>
+          <a href="{{ route('championsleague.index') }}" class="hover:underline font-bold">Ligue des Champions</a>
+          <a href="{{ route('palmares.index') }}" class="hover:underline">Palmarès</a>
+          <a href="{{ route('nationsleague.index') }}" class="hover:underline">Ligue des Nations</a>
+          <a href="{{ route('videos.index') }}" class="hover:underline">Vidéos</a>
         </div>
 
         <div class="flex justify-center space-x-6 text-sm mb-6">
