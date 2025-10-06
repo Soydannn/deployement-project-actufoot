@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Transfert;
 use App\Models\ChampionsLeague;
 use App\Models\NationsLeague;
-use App\Models\Palmarès;
-use App\Models\Videos;
+use App\Models\Palmares;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -33,12 +33,12 @@ class SearchController extends Controller
             ->get();
 
         // Recherche dans Palmares
-        $palmares = Palmarès::where('equipe', 'like', "%$query%")
+        $palmares = Palmares::where('equipe', 'like', "%$query%")
             ->orWhere('description', 'like', "%$query%")
             ->orderBy('created_at', 'desc')
             ->get();
 
-        $videos = Videos::where('titre', 'like', "%$query%")
+        $videos = Video::where('titre', 'like', "%$query%")
             ->orderBy('created_at', 'desc')
             ->get();
 

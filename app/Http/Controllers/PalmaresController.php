@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Palmarès;
+use App\Models\Palmares;
 
 class PalmaresController extends Controller
 {
     public function index()
     {
-        $palmares = Palmarès::latest()->paginate(9);
+        $palmares = Palmares::latest()->paginate(9);
         return view('palmares', compact('palmares'));
     }
 
     public function show($id)
 {
-    $palmares = Palmarès::findOrFail($id);
+    $palmares = Palmares::findOrFail($id);
     return view('palmares.show', compact('palmares'));
 }
 

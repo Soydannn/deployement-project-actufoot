@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Videos;
+use App\Models\Video;
 
 class VideoController extends Controller
 {
     public function index()
 {
-    $videos = Videos::latest()->paginate(9);
+    $videos = Video::latest()->paginate(9);
     return view('videos', compact('videos'));
 }
 }

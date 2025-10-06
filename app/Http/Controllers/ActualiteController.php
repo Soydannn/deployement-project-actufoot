@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Actualite;
 use App\Models\ChampionsLeague;
-use App\Models\Palmarès;
+use App\Models\Palmares;
 use App\Models\Transfert;
 use App\Models\NationsLeague;
-use App\Models\Videos;
+use App\Models\Video;
 
 
 
@@ -19,7 +19,7 @@ class ActualiteController extends Controller
         // Récupère la dernière actualité
 
         $lastTransfert = Transfert::orderBy('created_at', 'desc')->first();
-        $lastPalmares = Palmarès::orderBy('created_at', 'desc')->first();
+        $lastPalmares = Palmares::orderBy('created_at', 'desc')->first();
         $lastNation = NationsLeague::orderBy('created_at', 'desc')->first();
         $lastChampion = ChampionsLeague::orderBy('created_at', 'desc')->first();
 
@@ -43,12 +43,12 @@ class ActualiteController extends Controller
         $champions = ChampionsLeague::latest()->take(3)->get();
 
         // Récupère les 3 dernières Actualités des palmarès
-        $palmares = Palmarès::latest()->take(3)->get();
+        $palmares = Palmares::latest()->take(3)->get();
 
           // Récupère les 3 dernières Actualités de la nation league
         $nations = NationsLeague::latest()->take(3)->get();
 
-        $videos = Videos::latest()->take(3)->get();
+        $videos = Video::latest()->take(3)->get();
     
         return view('actualites', compact('transferts', 'champions', 'palmares', 'nations', 'videos', 'lastArticle'));
     }

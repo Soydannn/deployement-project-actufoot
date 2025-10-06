@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Palmarès extends Model
+class Palmares extends Model
 {
     protected $fillable = [
         'competition',
